@@ -69,7 +69,7 @@ Ekran kaydı. 2-3 dk. açık kaynak V.T. kodu üzerinde konunun gösterimi. Vide
 
 Sayfa (Page) Yapısı ve Mekansal Yerellik
 
-İşletim sistemleri genellikle 4KB bloklar kullanırken, PostgreSQL gibi sistemlerin varsayılan 8KB, MySQL InnoDB’nin ise 16KB boyutunda sayfalar kullanması bir mühendislik tercihidir. Bir veritabanı tek bir satırı sorguladığında neden tüm sayfayı okur?. Bunun temel sebebi Spatial Locality (Mekansal Yerellik) ilkesidir. Eğer $n$ numaralı satıra ihtiyaç duyuluyorsa, muhtemelen $n+1$ numaralı satıra da kısa süre sonra ihtiyaç duyulacaktır. Sayfa okuması sayesinde, disk kafasının (HDD) veya kontrolcüsünün (SSD) fiziksel hareket maliyeti bir kez ödenir ve ilgili veri kümesi RAM'e taşınır. Adresleme aşamasında kullanılan block_id + offset (dosya içindeki sayfa numarası ve sayfa içindeki satır sırası) yapısı, karmaşık dosya sistemi arama algoritmalarını devre dışı bırakarak doğrudan donanım adresine yakın bir erişim sağlar.
+İşletim sistemleri genellikle 4KB bloklar kullanırken, PostgreSQL gibi sistemlerin varsayılan 8KB, MySQL InnoDB’nin ise 16KB boyutunda sayfalar kullanması bir mühendislik tercihidir. Bir veritabanı tek bir satırı sorguladığında neden tüm sayfayı okur? Bunun temel sebebi Spatial Locality (Mekansal Yerellik) ilkesidir. Eğer $n$ numaralı satıra ihtiyaç duyuluyorsa, muhtemelen $n+1$ numaralı satıra da kısa süre sonra ihtiyaç duyulacaktır. Sayfa okuması sayesinde, disk kafasının (HDD) veya kontrolcüsünün (SSD) fiziksel hareket maliyeti bir kez ödenir ve ilgili veri kümesi RAM'e taşınır. Adresleme aşamasında kullanılan block_id + offset (dosya içindeki sayfa numarası ve sayfa içindeki satır sırası) yapısı, karmaşık dosya sistemi arama algoritmalarını devre dışı bırakarak doğrudan donanım adresine yakın bir erişim sağlar.
 
 Buffer Pool ve Bellek Yönetimi Stratejileri
 
@@ -81,7 +81,7 @@ Veritabanının "bellek içi çalışma alanı" olan Buffer Pool, diske yapılan
 Veritabanlarında performans, verinin diskte nasıl dizildiği (Storage Layout) ile doğrudan bağlantılıdır.
 
 B+ Tree ve İndeksleme Mekanizması
-İlişkisel veritabanları (RDBMS), arama işlemlerini hızlandırmak için neden standart Binary Tree yerine B+ Tree kullanır?. Binary Tree yapılarında düğüm başına bir veri düşerken, B+ Tree sayfalarla (pages) tam uyumlu çalışır; bir düğüm yüzlerce anahtar barındırabilir. Bu, milyarlarca satırlık bir tabloda bile veriye ulaşmak için sadece 3-4 katman (level) inilmesini sağlar, bu da doğrudan 3-4 sayfa okuması (disk I/O) demektir.
+İlişkisel veritabanları (RDBMS), arama işlemlerini hızlandırmak için neden standart Binary Tree yerine B+ Tree kullanır? Binary Tree yapılarında düğüm başına bir veri düşerken, B+ Tree sayfalarla (pages) tam uyumlu çalışır; bir düğüm yüzlerce anahtar barındırabilir. Bu, milyarlarca satırlık bir tabloda bile veriye ulaşmak için sadece 3-4 katman (level) inilmesini sağlar, bu da doğrudan 3-4 sayfa okuması (disk I/O) demektir.
 
 Farklı Yaklaşımlar: PostgreSQL Heap vs. MySQL Clustered Index
 
