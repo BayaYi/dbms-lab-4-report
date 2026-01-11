@@ -108,8 +108,7 @@ Veritabanı diske yazarken "önce günlüğü tut, sonra veriyi işle" prensibin
 
 ## VT Üzerinde Gösterilen Kaynak Kodları
 
-Açıklama [Linki](https://...) \
-Açıklama [Linki](https://...) \
-Açıklama [Linki](https://...) \
-... \
-...
+WAL Mekanizması PostgreSQL [Linki](https://github.com/postgres/postgres/blob/master/src/backend/access/transam/xlog.c) \
+MySQL InnoDB 16KB sayfa yapısı [Linki](https://github.com/mysql/mysql-server/blob/trunk/storage/innobase/include/univ.i) \
+B+ Tree İndeks Yapısı [Linki](https://github.com/postgres/postgres/blob/master/src/backend/access/nbtree/nbtinsert.c) \
+Youtube video linki [LİNK](https://www.youtube.com/watch?v=7X6Ikon4vUI) \
