@@ -61,7 +61,7 @@ Ekran kaydı. 2-3 dk. açık kaynak V.T. kodu üzerinde konunun gösterimi. Vide
 
 ---
 
-# Açıklama (Ort. 600 kelime)
+# Açıklama 
 
 1. Sistem Perspektifi: Disk, I/O ve Sayfa Yönetimi
   
